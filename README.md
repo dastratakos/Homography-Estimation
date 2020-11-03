@@ -20,7 +20,7 @@
   </p>
 </p>
 
-<hr>
+<!-- <hr> -->
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -36,7 +36,7 @@
 * [License](#license)
 * [Contact](#contact)
 
-<hr>
+<!-- <hr> -->
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -125,7 +125,7 @@ operate over a sequence of frames, or an input video.
     </div>
 </div>
 
-<hr>
+<!-- <hr> -->
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -153,7 +153,7 @@ git clone https://github.com/dastratakos/Homography-Estimation.git
 and videos should go in the directory `input/videos/[dir]`, where `[dir]` is a
 2 digit unique identifier within either directory.
 
-<hr>
+<!-- <hr> -->
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -164,12 +164,12 @@ which are stored as `input/images/01/1.png` and `input/images/01/2.png`.
 python imageAnalysis.py -d 01
 ```
 2. This is an example of running homography estimation on a full video, which
-is stored as `input/videos/IMG_1554.MOV`.
+is stored as `input/videos/02/IMG_1554.MOV`.
 ```sh
 python videoAnalysis.py -d 02
 ```
 
-<hr>
+<!-- <hr> -->
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -181,14 +181,14 @@ stabilization" effect.
 See the [open issues](https://github.com/dastratakos/Homography-Estimation/issues)
 for a more detailed list of proposed features (and known issues).
 
-<hr>
+<!-- <hr> -->
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the Apache 2.0 License. See the [`LICENSE`](LICENSE) for more information.
 
-<hr>
+<!-- <hr> -->
 
 <!-- CONTACT -->
 ## Contact
@@ -206,6 +206,6 @@ Dean Stratakos - [dstratak@stanford.edu](mailto:dstratak@stanford.edu)
 [issues-shield]: https://img.shields.io/github/issues/dastratakos/Homography-Estimation.svg?style=flat-square
 [issues-url]: https://github.com/dastratakos/Homography-Estimation/issues
 [license-shield]: https://img.shields.io/github/license/dastratakos/Homography-Estimation.svg?style=flat-square
-[license-url]: https://github.com/dastratakos/Homography-Estimation/blob/master/LICENSE.txt
+[license-url]: https://github.com/dastratakos/Homography-Estimation/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/dean-stratakos-8b338b149
