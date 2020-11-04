@@ -26,40 +26,77 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Examples](#examples)
   * [Functionality](#functionality)
+  * [Algorithm details](#algorithm-details)
+  * [Examples](#examples)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Roadmap](#roadmap)
+* [Future Work](#future-work)
 * [License](#license)
 * [Contact](#contact)
 
 <!-- <hr> -->
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
-
-From Wikipedia: [Homography (computer vision)](https://en.wikipedia.org/wiki/Homography_(computer_vision))
-
-In the field of computer vision, any two images of the same planar surface in
-space are related by a homography (assuming a pinhole camera model). This has
-many practical applications, such as image rectification, image registration,
-or computation of camera motion—rotation and translation—between two images.
-Once camera rotation and translation have been extracted from an estimated
-homography matrix, this information may be used for navigation, or to insert
-models of 3D objects into an image or video, so that they are rendered with the
-correct perspective and appear to have been part of the original scene
-(see Augmented reality).
-
-<hr align="left" width="50%" style="margin-left: 15px">
+## About the Project
 
 ### Functionality
 
-This project has two features so far. First, it can estimate a homography
-between two input image frames. Second, it extends this functionality to
-operate over a sequence of frames, or an input video.
+This project has two main features so far.
+
+The first functionality is to estimate a homography between two input image
+frames. This is achieved by finding key points in each image, finding key point
+matches between the images, and running RANSAC to determine inliers and
+outliers in the matches.
+
+The second functionality is to extend the first feature to operate over an
+entire sequence of frames, or an input video. This outputs a new video
+highlighting inliers and outliers across frames as well as homographies
+relating each pair of consecutive frames.
+
+<hr align="left" width="50%" style="margin-left: 15px">
+
+### Algorithm details
+
+<b>Homographies</b>
+
+In computer vision, a homography is a transformation that describes the
+relationship between any two images (or photographs) of the same plane in
+space. More mathematically (in projective geometry), a homography is an
+isomorphism of projective spaces, and have been historically used to explain
+and study the difference in appearance of two planes observed from different
+points of view. Homographies can be represented as a 3 x 3 matrix which can be
+left-multiplied with any homogeneous point in the original image to describe
+where that point lies in the transformed image.
+
+Applications of homographies include removing perspective distortion (computer
+vision), rendering textures (computer graphics), and computing planar shadows
+(computer graphics). In this project, homographies are used to compute the
+camera motion - namely the rotation and translation - between two images.
+
+<b>RANSAC algorithm</b>
+
+The RANdom SAmple Consensus (RANSAC) algorithm is a general parameter
+estimation approach to compensate for a large proportion of outliers in the
+data. In this application, the input data to RANSAC is the collection of
+keypoint matches between consecutive frames, and the algorithm picks out
+matches which are true matches (inliers) versus false matches (outliers).
+
+Algorithm (from http://www.cse.yorku.ca/~kosta/CompVis_Notes/ransac.pdf):
+1. Select randomly the minimum number of points required to determine the model
+parameters.
+2. Solve for the parameters of the model.
+3. Determine how many points from the set of all points fit with a predefined
+tolerance ε.
+4. If the fraction of the number of inliers over the total number points in the
+set exceeds a predefined threshold τ, re-estimate the model parameters using
+all the identified inliers and terminate.
+5. Otherwise, repeat steps 1 through 4 (maximum of N times).
+
+Since a homography can be computed from just 4 tie points, step 1 requires
+randomly choosing 4 tie points between the images.
 
 <hr align="left" width="50%" style="margin-left: 15px">
 
@@ -171,12 +208,14 @@ python videoAnalysis.py -d 02
 
 <!-- <hr> -->
 
-<!-- ROADMAP -->
-## Roadmap
+<!-- FUTURE WORK -->
+## Future Work
 
-* In video analysis, use the estimated homographies to create a "tripod
+- [ ] Reformat output of video analysis to collect homographies for each pair
+of consecutive frames in a CSV or JSON file.
+- [ ] In video analysis, use the estimated homographies to create a "tripod
 stabilization" effect.
-* Fine tune inlier/outlier points.
+- [ ] Fine tune inlier/outlier points.
 
 See the [open issues](https://github.com/dastratakos/Homography-Estimation/issues)
 for a more detailed list of proposed features (and known issues).
