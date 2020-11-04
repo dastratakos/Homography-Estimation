@@ -6,21 +6,24 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<p align="center">
-  <h2 align="center" style="font-size: 50px; font-weight: bold; margin: 0px;">Homography Estimation</h2>
-  <h2 align="center" style="font-size: 30px; margin: 0px;">Dean Stratakos</h2>
-  <p align="center">
-    A RANSAC algorithm to estimate homographies between consecutive image frames.
+<div align="center">
+    <h2 style="font-size: 50px; font-weight: bold; margin: 0px;">
+        Homography Estimation
+    </h2>
+    <h2 style="font-size: 30px; margin: 0px;">
+        Dean Stratakos
+    </h2>
+    A RANSAC algorithm to estimate homographies between consecutive image
+    frames.
     <br />
-    <a href="https://github.com/dastratakos/Homography-Estimation">Explore the docs</a>
+    <a href="https://github.com/dastratakos/Homography-Estimation">
+        Explore the docs
+    </a>
     ·
-    <a href="https://github.com/dastratakos/Homography-Estimation">View Demo</a>
-    ·
-    <a href="https://github.com/dastratakos/Homography-Estimation/issues">Request Feature</a>
-  </p>
-</p>
-
-<!-- <hr> -->
+    <a href="https://github.com/dastratakos/Homography-Estimation/issues">
+        Request Feature
+    </a>
+</div>
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -36,8 +39,6 @@
 * [Future Work](#future-work)
 * [License](#license)
 * [Contact](#contact)
-
-<!-- <hr> -->
 
 <!-- ABOUT THE PROJECT -->
 ## About the Project
@@ -162,8 +163,6 @@ randomly choosing 4 tie points between the images.
     </div>
 </div>
 
-<!-- <hr> -->
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -190,8 +189,6 @@ git clone https://github.com/dastratakos/Homography-Estimation.git
 and videos should go in the directory `input/videos/[dir]`, where `[dir]` is a
 2 digit unique identifier within either directory.
 
-<!-- <hr> -->
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -206,8 +203,6 @@ is stored as `input/videos/02/IMG_1554.MOV`.
 python videoAnalysis.py -d 02
 ```
 
-<!-- <hr> -->
-
 <!-- FUTURE WORK -->
 ## Future Work
 
@@ -220,14 +215,10 @@ stabilization" effect.
 See the [open issues](https://github.com/dastratakos/Homography-Estimation/issues)
 for a more detailed list of proposed features (and known issues).
 
-<!-- <hr> -->
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the Apache 2.0 License. See the [`LICENSE`](LICENSE) for more information.
-
-<!-- <hr> -->
 
 <!-- CONTACT -->
 ## Contact
