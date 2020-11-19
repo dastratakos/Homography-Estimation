@@ -13,6 +13,7 @@
     <h2 style="font-size: 30px; margin: 0px;">
         Dean Stratakos
     </h2>
+    <h3>November 4, 2020</h3>
     A RANSAC algorithm to estimate homographies between consecutive image
     frames.
     <br />
