@@ -13,6 +13,7 @@
     <h2 style="font-size: 30px; margin: 0px;">
         Dean Stratakos
     </h2>
+    <h3>November 4, 2020</h3>
     A RANSAC algorithm to estimate homographies between consecutive image
     frames.
     <br />
@@ -45,7 +46,7 @@
 
 ### Functionality
 
-This project has two main features so far.
+This project currently has two main features.
 
 The first functionality is to estimate a homography between two input image
 frames. This is achieved by finding key points in each image, finding key point
