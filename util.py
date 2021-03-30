@@ -5,6 +5,7 @@ INPUT_PATH = 'input/'
 OUTPUT_PATH = 'output/'
 POINT_MAPS_PATH = 'point_maps/'
 FRAMES_PATH = 'frames/'
+STABILIZED_PATH = 'stabilized/'
 
 BLUE = (255, 0, 0)
 GREEN = (0, 255, 0)
