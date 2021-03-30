@@ -31,7 +31,8 @@ def processVideo(directory, interactive=False):
         next_frame = cv2.rotate(next_frame, cv2.ROTATE_90_CLOCKWISE)
         next_frame = cv2.cvtColor(next_frame, cv2.COLOR_BGR2GRAY)
 
-        point_map, inliers = imageAnalysis.main(frame, next_frame, i, verbose=False)
+        point_map, inliers, homography = imageAnalysis.main(frame, next_frame,
+                                                            i, verbose=False)
         cv2.imwrite(util.FRAMES_PATH + str(i) + '.png',
                 util.drawInliersOutliers(frame, point_map, inliers))
 
@@ -56,7 +57,7 @@ def saveVideo(directory):
         [util.FRAMES_PATH + img for img in os.listdir(util.FRAMES_PATH)
             if img.endswith('.png') and img[:-4].isnumeric()],
         key=lambda x: int(x.split('/')[-1][:-4]))
-    clip = ISC.ImageSequenceClip(image_files, fps=20)
+    clip = ISC.ImageSequenceClip(image_files, fps=30)
     clip.write_videofile(util.OUTPUT_PATH + directory + '.mp4')
 
 if __name__ == '__main__':

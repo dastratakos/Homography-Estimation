@@ -147,7 +147,7 @@ def main(image1, image2, directory, verbose=True):
         f.write(f'Homography:\n{str(homography)}\n\n')
         f.write(f'Num inliers: {len(inliers)}')
 
-    return point_map, inliers
+    return point_map, inliers, homography
 
 if __name__ == '__main__':
     arg_parser = argparse.ArgumentParser()
@@ -162,8 +162,10 @@ if __name__ == '__main__':
     util.POINT_MAPS_PATH += f'images/'
 
     image1 = cv2.imread(util.INPUT_PATH + '1.png', 0)
+#    image1 = cv2.imread(util.INPUT_PATH + '1.png', 1)
     assert image1 is not None, f'Invalid first image: {util.INPUT_PATH}1.png'
     image2 = cv2.imread(util.INPUT_PATH + '2.png', 0)
+#    image2 = cv2.imread(util.INPUT_PATH + '2.png', 1)
     assert image2 is not None, f'Invalid second image: {util.INPUT_PATH}2.png'
 
     os.makedirs(util.OUTPUT_PATH, exist_ok=True)
