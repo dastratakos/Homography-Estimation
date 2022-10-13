@@ -3,10 +3,10 @@ file: imageAnalysis.py
 ----------------------
 This is the main driver file, which implements a RANSAC algorithm for
 homography estimation. The algorithm follows the one in "Multiple View Geometry
-in computer vision" by Richard Hartley and Andrew Zisserman.
+in computer vision" by Richard Hartley and Andrew Zisserman. RANSAC stands for
+RAndom SAmple Consensus.
 """
 import argparse
-import copy
 import csv
 from datetime import datetime
 import os
@@ -27,8 +27,8 @@ def computeHomography(pairs):
     """
     A = []
     for x1, y1, x2, y2 in pairs:
-        A.append([x1, y1, 1, 0, 0, 0, -x2 * x1, -x2 * y1, -x1])
-        A.append([0, 0, 0, x1, y1, 1, -y2 * x1, -y2 * y1, -y1])
+        A.append([x1, y1, 1, 0, 0, 0, -x2 * x1, -x2 * y1, -x2])
+        A.append([0, 0, 0, x1, y1, 1, -y2 * x1, -y2 * y1, -y2])
     A = np.array(A)
 
     # Singular Value Decomposition (SVD)
